@@ -1,0 +1,6 @@
+---
+# tasks file for roles/nagios
+
+- name: nagios installation
+  ansible.builtin.include_tasks:
+   file: nagios.yml

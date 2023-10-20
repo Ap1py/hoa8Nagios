@@ -1,21 +1,5 @@
 ---
 - hosts: all
   become: true
-  tasks:
-
-  - name: install nagios for Ubuntu
-    apt:
-      name:
-        - nagios4-core
-        - nagios-plugins
-      state: latest
-    when: ansible_distribution == "Ubuntu"
-
-  - name: install nagios for Centos
-    dnf:
-      name:
-        - nagios
-        - nagios-plugins-all
-      state: latest
-    when: ansible_distribution == "CentOS"
-
+  roles:
+    - role: roles/nagios
